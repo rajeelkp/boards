@@ -1,0 +1,78 @@
+<html>
+<head>
+<title> B O A R D S </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="script.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body  onload="show()">
+
+  <!-- Header Starts Here -->
+<header align=center>
+  <h1> B O A R D S </h1>
+  <span style="font-size:1em; font-weight:bold; text-align:center"> The To-Do-List</span>
+
+</header>
+<!-- Header ends Here -->
+
+<form style="width:90%; margin:10px auto;" class="row">
+ <div class='col-md-10'>
+   <input ondragover="allowDrop(event)" type="text" class="form-control" placeholder="Do this task" id="to-do">
+ </div>
+ <div class='col-md-2'>
+   <button style="width:100%;" type="button" class="btn btn-primary"  onclick="adder()" >    Add   </button>
+</div>
+</form>
+
+<div class="row container">
+  <div class="col-md-4 wrap" ondragover="allowDrop(event)" id="job" ondrop="redo(k)" >
+
+
+
+
+  </div>
+
+
+  <div class="col-md-3 wrap" id="inprogress" ondragover="allowDrop(event)" ondrop="progress(k)"  >
+
+
+  </div>
+
+
+  <div ondrop="complete(k)" ondragover="allowDrop(event)"  class="col-md-4 wrap" id="completed">
+
+  </div>
+
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 id="modal-title"> </h4>
+        </div>
+        <div class="modal-body">
+ <i> Comments </i>
+          <div id="quotes"> </div>
+<br/>
+ <div id='addcomments''></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div>
+
+</body>
+</html>

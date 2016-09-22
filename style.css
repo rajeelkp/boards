@@ -1,0 +1,65 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background: #4ABDAC;
+}
+
+.container{
+  max-width:1200px;
+  margin:0px auto;
+  box-shadow: 3px #414141;
+
+}
+
+.wrap{
+  min-height: 300px;
+  border-radius: 10px;
+ margin:10px;
+  padding:20px;
+}
+.wrap-title{
+  background:url(border.png);
+  padding:5px;
+  text-align: center;
+  box-shadow: 2px 2px 2px 2px rgba(7, 136, 155, 0.6);
+  margin-bottom:10px;
+}
+#job{  background: rgba(7, 136, 155, 0.2);}
+
+#inprogress{
+  background:rgba(7, 136, 155,0.5);
+
+}
+
+
+
+
+#completed{
+   background: rgba(7, 136, 155, 0.7);
+
+}
+
+#quotes p{
+  background: rgba(7, 136, 155, 0.1);
+ border-left: 10px solid rgba(7, 136, 155, 0.8);
+ box-shadow: 4px 4px 5px rgba(7, 136, 155, 0.3);
+ margin: 10px;
+ padding: 10px;
+}
+.form-control{  background: rgba(7, 136, 155, 0.1);
+color:black;
+font-style: italic;}
+
+#drag {
+  width:100%;
+  min-height: 50px;
+  padding:10px ;
+  font-size: 1.5em;
+  background:rgba(200,200,200,0.5);
+  margin:5px;
+}
+.info{
+  float:right;
+}
