@@ -4,29 +4,68 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+
 <script src="script.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
+<link href="style2.css" rel="stylesheet">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body  onload="show()">
 
   <!-- Header Starts Here -->
 <header align=center>
-  <h1> B O A R D S </h1>
+  <h1><span class="glyphicon glyphicon-list-alt"></span>  B O A R D S </h1>
   <span style="font-size:1em; font-weight:bold; text-align:center"> The To-Do-List</span>
 
 </header>
 <!-- Header ends Here -->
 
-<form style="width:90%; margin:10px auto;" class="row">
- <div class='col-md-10'>
+
+<div class='row'>
+<form  style="width:90%; margin:10px auto;">
+ <div class='col-md-12'>
    <input ondragover="allowDrop(event)" type="text" class="form-control" placeholder="Do this task" id="to-do">
+   </div>
  </div>
- <div class='col-md-2'>
-   <button style="width:100%;" type="button" class="btn btn-primary"  onclick="adder()" >    Add   </button>
+
+ <div class='row' style="width:90%; margin:10px auto;">
+    <div class='col-md-4'>
+      <div class='row'>
+      <input placeholder='Day ??? ' type='date' id='date1' class='form-control' required > </div>
+      <!-- <script>
+         $(function() {
+            $( "#datepicker-1" ).datepicker( {
+                 minDate: new Date(2016, 9 - 1, 21)
+
+            }
+
+         )});
+      </script> -->
+    </div>
+    <div class='col-md-4'>
+      <div class='row'>
+
+
+
+
+        <div class='col-sm-12'>
+           <input type='time' class="form-control" id='time1' required/>
+       </div>
+
+
+
+
+
+
 </div>
-</form>
+    </div>
+
+ <div class='col-md-4'>
+   <button style="width:100%;" type="button" class="btn btn-primary"  onclick="adder()" >    Add   </button>
+ </div>
+</form></div>
 
 <div class="row container">
   <div class="col-md-4 wrap" ondragover="allowDrop(event)" id="job" ondrop="redo(k)" >
@@ -54,13 +93,24 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 id="modal-title"> </h4>
+          <h2 id="modal-title"> </h2>
         </div>
         <div class="modal-body">
  <i> Comments </i>
           <div id="quotes"> </div>
 <br/>
- <div id='addcomments''></div>
+<div class='row'><div class='col-md-6'>
+Add Media :  <input type="file" onchange="previewFile()"></div><div class='col-md-6'>
+  <img src="" height="200" alt="Image preview..." id='preview' class="hide">
+</div></div>
+  <button id='imageadder' onclick="imageadder" class="btn btn-danger hide"> Attach the Image </button>
+
+
+ <div id='addcomments'></div>
+ <div id='addcommentsbutton'></div>
+
+<canvas id='can' class="hide"></canvas>
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -69,6 +119,42 @@
 
     </div>
   </div>
+
+
+
+
+
+  <div id="priorityModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2> Set Modal priority </h2>
+        </div>
+        <div class="modal-body">
+ <i> What should be the prioriy of this Event ?  </i>
+<select id='priority'>
+<option> High </option>
+
+<option> Medium </option>
+
+<option> Low </option>
+</select><br/>
+<!-- <button style="float:right; width:50%; box-shadow:2px 2px 2px #414141;" class='btn btn-primary'> Set Priority </button> -->
+
+<br/>
+
+
+        </div>
+        <div class="modal-footer" id="modal-footer-p">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 
 
 
